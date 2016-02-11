@@ -1,0 +1,24 @@
+$body-text-color: #999;
+$button-bg-color: #00b3ee;
+$button-bg-color-hover: #00b3aa;
+$button-text-color: #fff;
+
+body { font: 100% Helvetica, sans-serif; color: $body-text-color;}
+button { padding:10px; border:1px solid $button-bg-color; background: $button-bg-color; color: $button-text-color; cursor:pointer;  }
+button:hover { background: $button-bg-color-hover; }
+
+.counter {
+  .actions button {
+    margin-right:10px;
+  }
+}
+
+header {
+  ul {
+    margin:0;
+    padding:0;
+    li {
+      display: inline-block; padding:10px;
+    }
+  }
+}
