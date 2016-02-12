@@ -21,7 +21,7 @@ class Counter extends Component {
     const { value, onIncrement, onDecrement } = this.props
     return (
       <div className="counter">
-        <p>
+        <p className="summary">
           Clicked: {value} times
         </p>
         <p className="actions">
