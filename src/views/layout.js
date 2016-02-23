@@ -1,27 +1,33 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router'
 
-import Styles from '../assets/styles/layout.scss'
-
-export default function Layout({ children }) {
-  return (
-    <div>
-      <header>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/About">About</Link>
-          </li>
-          <li>
-            <Link to="/Other">Other</Link>
-          </li>
-        </ul>
-      </header>
+export default class Layout extends Component {
+  render() {
+    return (
       <div>
-      {children}
+        <header>
+          <nav className="navbar navbar-default">
+            <div className="container">
+              <div className="navbar-header">
+                <ul className="nav navbar-nav">
+                  <li>
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/About">About</Link>
+                  </li>
+                  <li>
+                    <Link to="/Other">Other</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <div className="container">
+          {this.props.children}
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }

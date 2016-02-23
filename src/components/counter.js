@@ -25,16 +25,16 @@ class Counter extends Component {
           Clicked: {value} times
         </p>
         <p className="actions">
-          <button onClick={onIncrement}>
+          <button className="btn btn-info" onClick={onIncrement}>
             +
           </button>
-          <button onClick={onDecrement}>
+          <button className="btn btn-info" onClick={onDecrement}>
             -
           </button>
-          <button onClick={this.incrementIfOdd}>
+          <button className="btn btn-info" onClick={this.incrementIfOdd}>
             Increment if odd
           </button>
-          <button onClick={this.incrementAsync}>
+          <button className="btn btn-info" onClick={this.incrementAsync}>
             Increment async
           </button>
         </p>

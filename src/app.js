@@ -13,7 +13,6 @@ let store = configureStore();
 const history = syncHistoryWithStore(hashHistory, store)
 
 // TODO Split routes into different file
-
 ReactDOM.render(
   <Provider store={store}>
     <div>
