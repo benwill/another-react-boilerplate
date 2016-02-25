@@ -5,6 +5,7 @@ const initialState = {
 }
 
 export default function update(state = initialState, action) {
+  console.log("redux/modules/counter triggered");
   if(action.type === INCREMENT) {
     return { count: state.count + 1 }
   }
