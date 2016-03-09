@@ -1,10 +1,8 @@
-import { applyMiddleware, compose, createStore } from 'redux'
+import { createStore } from 'redux'
 import RootReducer from './rootReducer'
 import DevTools from './tools/devTools'
 
-export default function configureStore (initialState){
-
-  // TODO Configurable by environment
+export default function configureStore() {
   const store = createStore(RootReducer, DevTools.instrument())
 
   if (module.hot) {

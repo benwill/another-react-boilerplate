@@ -4,16 +4,23 @@ A very simple boilerplate for starting a react/redux/react-router/webpack projec
 
 #Tech
 
-React & React Router used for the UI.
-Redux used for the data store.
-Webpack & hot reloading, along with babel.
-Sass for styling.
-Mocha & expect fro testing.
+Redux & react router
+Webpack for bundling (babel, bootstrap loader, sass-loader..)
+React-css-modules
+Chai & Mocha for unit tests
 
 ## Tests
 
 ```bash
 npm test
+```
+
+## Linting (ESLINT)
+
+```bash
+npm run lint
+
+If issues with estraverse-fb missing, install it without --save, eslint has removed it as a dependency but the babel parser requires it, should be fixed next version.
 ```
 
 ## Installation

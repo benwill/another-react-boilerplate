@@ -1,0 +1,4 @@
+./src/**/*.spec.js
+--compilers js:babel-register
+--require ./test/mocha.js
+--require ./test/setup.js

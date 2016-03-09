@@ -1,4 +1,7 @@
-import React, { Component, PropTypes } from 'react'
+import React, { PropTypes, Component } from 'react'
+import cssModules from 'react-css-modules'
+import styles from './counter.scss'
+import Button from '../button/button'
 
 class Counter extends Component {
   constructor(props) {
@@ -20,33 +23,24 @@ class Counter extends Component {
   render() {
     const { value, onIncrement, onDecrement } = this.props
     return (
-      <div className="counter">
-        <p className="summary">
+      <div styleName="default">
+        <p>
           Clicked: {value} times
         </p>
-        <p className="actions">
-          <button className="btn btn-info" onClick={onIncrement}>
-            +
-          </button>
-          <button className="btn btn-info" onClick={onDecrement}>
-            -
-          </button>
-          <button className="btn btn-info" onClick={this.incrementIfOdd}>
-            Increment if odd
-          </button>
-          <button className="btn btn-info" onClick={this.incrementAsync}>
-            Increment async
-          </button>
+        <p>
+          <Button click={onIncrement} buttonText="+" />
+          <Button click={onDecrement} buttonText="-" />
+          <Button click={this.incrementIfOdd} buttonText="Increment if odd" />
+          <Button click={this.incrementAsync} buttonText="Increment async" />
         </p>
       </div>
     )
   }
 }
-
 Counter.propTypes = {
   value: PropTypes.number.isRequired,
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired
 }
 
-export default Counter
+export default cssModules(Counter, styles)

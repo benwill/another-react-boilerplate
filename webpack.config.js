@@ -1,13 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const cssModulesLoader = 'css?sourceMap&module&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]';
 
 module.exports = {
   devtool: "source-map",
   entry: [
     'eventsource-polyfill', // necessary for hot reloading with IE
     'webpack-hot-middleware/client',
-    './src/assets/styles/app.scss',
     './src/app',
     'bootstrap-loader'
   ],
@@ -25,14 +24,11 @@ module.exports = {
     
     // Not sure
     new webpack.NoErrorsPlugin()
-    
-    // Minify JS
-    //,new webpack.optimize.UglifyJsPlugin({ minify: false, compress: { warnings: false } })
   ],
   module: {
     loaders: [
       { test: /\.js?/, loaders: ['babel'], include: path.join(__dirname, 'src')},
-      { test: /\.(scss|sass)$/, loaders:  ['style?sourceMap', 'css?sourceMap', 'sass?sourceMap'] },
+      { test: /\.(scss|sass)$/, loaders:  ['style?sourceMap', cssModulesLoader, 'sass?sourceMap'] },
       
       // Bootstrap 3 - stuff to help load fonts & jquery dependency
       { test: /\.(woff2?|ttf|eot|svg)$/, loader: 'url?limit=10000' },
