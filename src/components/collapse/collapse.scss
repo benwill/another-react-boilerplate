@@ -1,0 +1,21 @@
+$border : solid #efefef;
+
+.default {
+  border:1px $border;
+  margin-bottom:5px;
+  .header {
+    padding:3px; 
+    margin:0; 
+    padding:10px;
+    cursor:pointer;
+    text-decoration:underline;
+  }
+  .closed{
+    display:none;
+  }
+  .open {
+    border-top:1px $border;
+    display:block;
+    padding:10px;
+  }
+}

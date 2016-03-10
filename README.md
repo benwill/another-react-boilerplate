@@ -20,8 +20,8 @@ npm test
 ```bash
 npm run lint
 
-If issues with estraverse-fb missing, install it without --save, eslint has removed it as a dependency but the babel parser requires it, should be fixed next version.
 ```
+NOTE: If errors appear with a missing dependency: estraverse-fb missing, install it without --save, eslint has removed it as a dependency but the babel parser requires it, should be fixed next version.
 
 ## Installation
 
